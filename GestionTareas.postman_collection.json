@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "48b4ec7a-66e6-4cc1-9dea-dbc237cee024",
+		"name": "GestionTareas",
+		"description": "Se incluyen todas los endpoint soportados para la aplicacion de gestion de tareas.  \n  \nFolder Alumno: Operaciones CRUD con alumnos  \nFolder Tarea: Operaciones CRUD con tareas  \n  \nNota: Se recomienda la creacion de alumnos antes de la creacion de tareas debido a que el modelo de base de datos contenpla una relacion entre las tareas y los alumnos asignados a ella",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7889929"
+	},
+	"item": [
+		{
+			"name": "Alumno",
+			"item": [
+				{
+					"name": "Agregar alumno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombres\": \"Moises\",\r\n  \"apellidoPaterno\": \"Diaz\",\r\n  \"apellidoMaterno\": \"Diaz\",\r\n  \"edad\": 27\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/alumnos/addAlumno",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"alumnos",
+								"addAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar alumno",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombres\": \"Moises\",\r\n  \"apellidoPaterno\": \"Diaz\",\r\n  \"apellidoMaterno\": \"Diaz\",\r\n  \"edad\": 27\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/alumnos/updateAlumno",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"alumnos",
+								"updateAlumno"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar alumno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/alumnos/deleteAlumno?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"alumnos",
+								"deleteAlumno"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar alumnos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/alumnos/getAlumnos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"alumnos",
+								"getAlumnos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tarea",
+			"item": [
+				{
+					"name": "Agregar tarea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAlumno\":5,\r\n    \"nombre\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/tareas/addTarea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tareas",
+								"addTarea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar tarea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idToUpdate\":1,\r\n    \"idAlumno\":4,\r\n    \"nombre\":\"Tarea editada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/tareas/updateTarea",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tareas",
+								"updateTarea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar tarea",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/tareas/deleteTarea?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tareas",
+								"deleteTarea"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar tareas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/tareas/getTareas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"tareas",
+								"getTareas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
